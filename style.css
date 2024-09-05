@@ -1239,21 +1239,20 @@ html, body {
         font-size: 5.5vw
     }
 
+    .scroller__inner {
+        padding-block: 1rem;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+    
+    
+      }
+
 
     .companies__container {
         height: 700px;
     }
 
-        .scroller {
-            width: 100%;
-            top: 70%;
-            height: 150px;
-        }
-
-        .scroller img {
-            width:  100%;
-            height: 170px;
-        }
 
     .extras__card {
         width: 80%;
