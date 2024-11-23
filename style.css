@@ -365,6 +365,7 @@ body {
   padding: 0 100px;
   z-index: 2;
   transition: transform 0.5s ease-in-out;
+  margin: 0 auto;
 }
 
 .main__content p {
@@ -399,8 +400,11 @@ body {
 }
 
 #cta {
+  position: absolute;
   left: 50%;
-  margin-left: -75px;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
 }
 
 .button1 svg {
@@ -1181,11 +1185,15 @@ body {
   /*responsive page design for mobile devices*/
 
   .button1 {
-    font-size: 0.9rem;
-    padding: 10px;
-    width: 100px;
-    height: 40px;
+    width: 120px;
+    height: 30px;
     border-radius: 15px;
+    font-size: 0.8rem;
+  }
+
+  .svg-icon {
+    width: 15px;
+    height: 20px;
   }
 
   .main__content p {
@@ -1360,10 +1368,13 @@ body {
 
   .discord__text h1 {
     font-size: 1em;
+    margin-bottom: 10px;
   }
 
   .discord__text a {
-    font-size: 0.8em;
+    font-size: 0.6em;
+    line-height: 12px;
+    display: block;
   }
 
   .security__container {
@@ -1393,10 +1404,13 @@ body {
 
   .security__text h1 {
     font-size: 1rem;
+    margin-bottom: 10px;
   }
 
   .security__text a {
-    font-size: 0.8rem;
+    font-size: 0.6em;
+    line-height: 12px;
+    display: block;
   }
 
   .circle2:nth-child(2) {
@@ -1431,10 +1445,13 @@ body {
 
   .website__text h1 {
     font-size: 1em;
+    margin-bottom: 10px;
   }
 
   .website__text a {
-    font-size: 0.8em;
+    font-size: 0.6em;
+    line-height: 12px;
+    display: block;
   }
 
   .circle3 {
@@ -1706,7 +1723,7 @@ body {
   /*responsive card design for tablets*/
 
   .main__content p {
-    margin-top: 25%;
+    margin-top: 200px;
     font-size: 2.5vw;
   }
 
