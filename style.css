@@ -863,6 +863,19 @@ body {
   text-align: center;
   position: relative;
   color: rgba(255, 255, 255, 0.8);
+  line-height: 30px;
+}
+
+.discord__text li {
+  display: none;
+}
+
+.website__text li {
+  display: none;
+}
+
+.security__text li {
+  display: none;
 }
 
 .security__container {
@@ -954,6 +967,7 @@ body {
   text-align: center;
   position: relative;
   color: rgba(255, 255, 255, 0.8);
+  line-height: 30px;
 }
 
 .website__container {
@@ -1049,6 +1063,7 @@ body {
   text-align: center;
   position: relative;
   color: rgba(255, 255, 255, 0.8);
+  line-height: 30px;
 }
 
 .staff-section {
@@ -1318,6 +1333,13 @@ body {
     top: 20%;
     left: 20%;
   }
+
+  #card__left img {
+    position: absolute;
+    width: 12%;
+    top: 20%;
+    left: 20%;
+  }
   .stack {
     height: 150vh;
     position: relative;
@@ -1326,22 +1348,25 @@ body {
 
   .stack__card {
     width: 85vw;
+    max-height: 300px;
   }
 
   .stack__card p {
     color: rgba(255, 255, 255, 0.8);
     font-size: 0.6rem;
     font-weight: 400;
-    margin: 0px 60px; /* 20px top and bottom, 40px left and right */
+    margin: 0px 30px; /* 20px top and bottom, 40px left and right */
     margin-bottom: 10px;
   }
 
   .stack__card h1 {
     font-size: 0.7rem;
+    margin: 0px 30px; /* 20px top and bottom, 40px left and right */
   }
 
   .stack__card h2 {
     font-size: 0.6rem;
+    margin: 0px 30px; /* 20px top and bottom, 40px left and right */
   }
 
   html {
@@ -1421,14 +1446,20 @@ body {
   }
 
   .discord__text h1 {
+    position: inherit;
     font-size: 1em;
     margin-bottom: 10px;
   }
 
   .discord__text a {
-    font-size: 0.6em;
-    line-height: 12px;
+    display: none;
+  }
+
+  .discord__text li {
+    font-size: 0.7em;
+    line-height: 22px;
     display: block;
+    color: rgba(255, 255, 255, 0.8);
   }
 
   .security__container {
@@ -1462,9 +1493,14 @@ body {
   }
 
   .security__text a {
-    font-size: 0.6em;
-    line-height: 12px;
+    display: none;
+  }
+
+  .security__text li {
+    font-size: 0.7em;
+    line-height: 22px;
     display: block;
+    color: rgba(255, 255, 255, 0.8);
   }
 
   .circle2:nth-child(2) {
@@ -1503,9 +1539,13 @@ body {
   }
 
   .website__text a {
-    font-size: 0.6em;
-    line-height: 12px;
+    display: none;
+  }
+  .website__text li {
+    font-size: 0.7em;
+    line-height: 22px;
     display: block;
+    color: rgba(255, 255, 255, 0.8);
   }
 
   .circle3 {
