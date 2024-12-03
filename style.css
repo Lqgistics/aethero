@@ -424,20 +424,6 @@ body {
   transform: translateX(7px);
 }
 
-@keyframes snakeEffect {
-  0%,
-  75% {
-    box-shadow: 0 0 150px 1px #6b95ff9a;
-  }
-  25%,
-  to {
-    box-shadow: 0 0 150px 1px #b0c1fe9a;
-  }
-  50% {
-    box-shadow: 0 0 150px 1px #cee5ffab;
-  }
-}
-
 .main__container {
   display: grid;
   grid-template-columns: 1fr auto 1fr; /* Three columns: left (1st card), center (2nd card), right (3rd card) */
@@ -453,7 +439,11 @@ body {
 }
 
 .extras__card {
-  background: radial-gradient(circle, #231d48 0%, rgba(2, 0, 37, 1) 100%);
+  background: radial-gradient(
+    circle,
+    rgba(30, 10, 60, 1) 0%,
+    rgba(10, 0, 27, 1) 100%
+  );
   margin: 1rem;
   height: 50vh;
   width: 20vw;
@@ -730,31 +720,42 @@ body {
 
 #cyan,
 #purple {
-  position: absolute; /* Change to absolute positioning */
-  width: 100vw;
-  height: 100vh;
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-#purple {
-  transition: opacity 4s ease-in-out;
-  bottom: 50%;
-  right: 30%;
-  transform: translate(50%, 50%);
-  background-image: url(/images/purple.png);
+  position: fixed;
+  width: 800px;
+  height: 800px;
+  border-radius: 50%;
+  -webkit-filter: blur(100px);
+  filter: blur(100px);
+  will-change: transform;
+  -webkit-transform: translateZ(0);
+  -webkit-perspective: 1000;
+  -webkit-backface-visibility: hidden;
   z-index: -1;
-  /*filter: brightness(50%) blur(100px)*/
+  animation: pulse 8s infinite ease-in-out;
 }
 
 #cyan {
-  transition: opacity 2.5s ease-in-out;
-  bottom: 30%;
-  right: 70%;
-  transform: translate(50%, 50%) rotate(180deg);
-  background-image: url(/images/cyan.png);
-  z-index: -2;
+  background: rgba(45, 208, 245, 0.35);
+  opacity: 0.3;
+  right: -200px;
+  top: -200px;
+}
+
+#purple {
+  background: rgba(235, 135, 255, 0.35);
+  opacity: 0.3;
+  left: -200px;
+  bottom: -200px;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
 }
 
 .discord__container {
@@ -1376,14 +1377,16 @@ body {
 
   #cyan {
     width: 120vh;
-    bottom: 70%;
-    right: 85%;
+    top: 30%;
+    right: 50%;
+    opacity: 0.3;
   }
 
   #purple {
     width: 130vh;
-    bottom: 60%;
-    right: 20%;
+    bottom: 50%;
+    left: 30%;
+    opacity: 0.3;
   }
 
   #stats {

@@ -160,3 +160,35 @@ document.addEventListener("click", function (event) {
     });
   }
 });
+
+const stats = document.querySelectorAll(".stats__card h1");
+
+function animateValue(element, start, end, duration) {
+  let current = start;
+  const range = end - start;
+  const increment = end > start ? 1 : -1;
+  const stepTime = Math.abs(Math.floor(duration / range));
+
+  const timer = setInterval(() => {
+    current += increment;
+    element.textContent = current;
+    if (current === end) {
+      clearInterval(timer);
+    }
+  }, stepTime);
+}
+
+const statsObserver = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      const target = entry.target;
+      const finalValue = parseInt(target.textContent);
+      // If the final value is above 1000, start from a higher number
+      const startValue = finalValue > 1000 ? finalValue - 200 : 0;
+      animateValue(target, startValue, finalValue, 2000);
+      statsObserver.unobserve(target);
+    }
+  });
+});
+
+stats.forEach((stat) => statsObserver.observe(stat));
