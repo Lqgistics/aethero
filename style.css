@@ -454,7 +454,6 @@ body {
   color: rgb(88 199 250/0%);
   transition: transform 0.5s ease-in-out;
   overflow-x: hidden;
-  animation: snakeEffect 10s linear infinite alternate;
 }
 
 /* Position each child explicitly */
