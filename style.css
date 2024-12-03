@@ -300,25 +300,66 @@ body {
   }
 }
 
-#form {
+/* Form popup background */
+.form-popup-bg {
   position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  display: none;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0s 0.3s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.form-popup-bg.is-visible {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.3s ease, visibility 0s;
+}
+
+/* Form container */
+#form {
+  position: relative;
+  display: flex;
   align-items: flex-start;
   flex-direction: column;
   gap: 10px;
-  width: 50%;
-  background-color: #fff;
+  width: 90%;
+  max-width: 700px;
+  background-color: #0c0c0c;
   padding: 50px;
   border-radius: 10px;
-  transition: transform 0.5s ease-in-out;
-  z-index: 3;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  transform: scale(0.8);
+  transition: transform 0.3s ease;
 }
 
+.form-popup-bg.is-visible #form {
+  transform: scale(1);
+}
+
+/* Close button */
+.close-button {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  border: none;
+  background: none;
+  font-size: 240px;
+  cursor: pointer;
+  padding: 5px;
+  line-height: 1;
+}
+
+/* Rest of your existing form styles */
 #form .title {
-  color: #000;
+  color: #fff;
   font-size: 2em;
   font-weight: 600;
   letter-spacing: -1px;
@@ -333,10 +374,12 @@ body {
 
 #form input,
 #form textarea {
-  border: 1px solid #dbd5d5;
+  border: 1px solid #dbd5d51f;
   padding: 8px 14px;
   width: 100%;
   height: 60px;
+  background-color: #131313;
+  color: #fff;
 }
 
 #form textarea {
@@ -344,16 +387,16 @@ body {
   height: 100px;
   resize: none;
   outline: 0;
+  color: #fff;
 }
 
 #form button {
   align-self: flex-end;
-  padding: 20px;
+  padding: 10px 20px 10px 20px;
   border: 0;
   font-size: 16px;
   font-weight: 500;
-  background-color: red;
-  color: #fff;
+  color: #000;
   cursor: pointer;
 }
 
@@ -454,6 +497,7 @@ body {
   color: rgb(88 199 250/0%);
   transition: transform 0.5s ease-in-out;
   overflow-x: hidden;
+  box-shadow: 0 -40px 70px rgba(255, 255, 255, 0.1); /* Subtle white glow at the top */
 }
 
 /* Position each child explicitly */
@@ -726,22 +770,26 @@ body {
   -webkit-filter: blur(100px);
   filter: blur(100px);
   will-change: transform;
+  transform: translateZ(0);
+  perspective: 1000;
+  backface-visibility: hidden;
   -webkit-transform: translateZ(0);
   -webkit-perspective: 1000;
   -webkit-backface-visibility: hidden;
-  z-index: -1;
+  z-index: -999; /* Much lower z-index */
+  pointer-events: none; /* This prevents click interference */
   animation: pulse 8s infinite ease-in-out;
 }
 
 #cyan {
-  background: rgba(45, 208, 245, 0.35);
+  background: rgba(45, 208, 245, 0.4);
   opacity: 0.3;
   right: -200px;
   top: -200px;
 }
 
 #purple {
-  background: rgba(235, 135, 255, 0.35);
+  background: rgba(235, 135, 255, 0.4);
   opacity: 0.3;
   left: -200px;
   bottom: -200px;
@@ -788,13 +836,23 @@ body {
   cursor: pointer;
 }
 
+.discord img {
+  position: absolute;
+  z-index: 1;
+  width: 25%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0.8;
+}
+
 .discord__inner {
   width: 100%;
   height: 100%;
   background: rgba(255, 255, 255, 0.05);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
-  -webkit-backdrop-filter: blur(50px);
-  backdrop-filter: blur(50px);
+  -webkit-backdrop-filter: blur(70px);
+  backdrop-filter: blur(70px);
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
   -moz-backface-visibility: hidden;
@@ -863,7 +921,7 @@ body {
   text-align: center;
   position: relative;
   color: rgba(255, 255, 255, 0.8);
-  line-height: 30px;
+  line-height: 1rem;
 }
 
 .discord__text li {
@@ -906,10 +964,10 @@ body {
     height: 100%;
     background: rgba(255, 255, 255, 0.05);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
-    -webkit-backdrop-filter: blur(50px);
+    -webkit-backdrop-filter: blur(70px);
     border-radius: 20px;
 
-    backdrop-filter: blur(50px);
+    backdrop-filter: blur(70px);
     backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
     -moz-backface-visibility: hidden;
@@ -918,6 +976,16 @@ body {
     -moz-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0);
   }
+}
+
+.security img {
+  position: absolute;
+  z-index: 1;
+  width: 35%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0.8;
 }
 
 .security:hover {
@@ -967,7 +1035,7 @@ body {
   text-align: center;
   position: relative;
   color: rgba(255, 255, 255, 0.8);
-  line-height: 30px;
+  line-height: 1rem;
 }
 
 .website__container {
@@ -1002,8 +1070,8 @@ body {
     height: 100%;
     background: rgba(255, 255, 255, 0.05);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
-    -webkit-backdrop-filter: blur(50px);
-    backdrop-filter: blur(50px);
+    -webkit-backdrop-filter: blur(70px);
+    backdrop-filter: blur(70px);
     border-radius: 20px;
     -webkit-backface-visibility: hidden;
     -moz-backface-visibility: hidden;
@@ -1014,6 +1082,16 @@ body {
   }
   -webkit-transform: translate3d(0, 0, 0);
   -moz-transform: translate3d(0, 0, 0);
+}
+
+.website img {
+  position: absolute;
+  z-index: 1;
+  width: 35%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0.8;
 }
 
 .website:hover {
@@ -1063,7 +1141,7 @@ body {
   text-align: center;
   position: relative;
   color: rgba(255, 255, 255, 0.8);
-  line-height: 30px;
+  line-height: 1rem;
 }
 
 .staff-section {
@@ -1901,8 +1979,16 @@ body {
   .extras__card img {
     position: absolute;
     width: 15%;
-    top: 15%;
+    top: 20%;
     left: 20%;
+  }
+
+  #card__left img {
+    position: absolute;
+    inset: 0;
+    left: 20%;
+    top: 20%;
+    width: 11%;
   }
 
   .stack {
@@ -2126,6 +2212,20 @@ body {
     bottom: 30%;
     transform: rotate(-90deg);
   }
+
+  #cyan {
+    width: 120vh;
+    top: 30%;
+    right: 50%;
+    opacity: 0.3;
+  }
+
+  #purple {
+    width: 130vh;
+    bottom: 50%;
+    left: 30%;
+    opacity: 0.3;
+  }
 }
 
 footer {
@@ -2208,10 +2308,21 @@ a {
     text-align: center;
     flex-direction: column;
     padding: 0rem 10vw;
-    margin-top: 200px;
+    margin-top: 75px;
+    margin-bottom: 75px;
+  }
+  footer a {
+    padding: 0;
+    font-size: 0.8rem;
+    display: block;
+  }
+
+  footer h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
   }
   .col {
-    margin-top: 20px;
+    margin-top: 10px;
     width: 100%;
   }
   .social {

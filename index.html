@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<ht</footer>ml lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equi</div>v="X-UA-Compatible" content="IE=edge" />
     <meta
       name="viewport"
       content="width=device-width, initial-scale = 0.86, maximum-scale=3.0, minimum-scale=0.86"
@@ -23,17 +23,26 @@
         <button class="button" id="navbar__btn">Contact Us</button>
       </div>
     </nav>
+    <div class="form-popup-bg">
+      <form id="form">
+        <button
+          type="button"
+          class="close-button"
+          onclick="closeForm()"
+          style="color: rgba(255, 0, 0, 0.575); font-size: 1.2rem"
+        >
+          x
+        </button>
+        <div class="title">Contact us</div>
+        <input type="text" placeholder="Your email" class="input" />
+        <textarea placeholder="Your message"></textarea>
 
-    <form id="form">
-      <div class="title">Contact us</div>
-      <input type="text" placeholder="Your email" class="input" />
-      <textarea placeholder="Your message"></textarea>
-
-      <button>Submit</button>
-    </form>
+        <button>Submit</button>
+      </form>
+    </div>
 
     <div class="main__content">
-      <p>GITHUB ISNT RESPONDING</p>
+      <p>GITHUB TEST</p>
       <button id="cta" class="button1">
         <svg
           class="svg-icon"
@@ -187,32 +196,12 @@
         <div class="discord">
           <div class="circle"></div>
           <div class="circle"></div>
+          <img src="images/discord-mark-white.png" />
+
           <div class="discord__inner"></div>
         </div>
       </div>
       <div class="discord__sub-container discord__text">
-        <h1>Bespoke Software Development</h1>
-        <a
-          >Bring your ideas to life with our full-stack software development
-          services. Whether you need a dynamic website, a powerful mobile app,
-          or a custom solution, our team delivers high-quality, scalable
-          projects tailored to your needs. From front-end design to back-end
-          infrastructure, we handle it all—transforming your vision into reality
-          with innovative technology and a seamless user experience.
-        </a>
-        <ul>
-          <li>- Full-stack development services</li>
-          <li>- Websites, apps & custom solutions</li>
-          <li>- High-quality, scalable projects</li>
-          <li>- Front-end to back-end expertise</li>
-          <li>- Innovative tech solutions</li>
-          <li>- Seamless user experience</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="security__container">
-      <div class="security__sub-container security__text">
         <h1>Discord Solutions</h1>
         <a
           >Unlock the full potential of your Discord community with our tailored
@@ -231,11 +220,34 @@
           <li>- Community growth solutions</li>
         </ul>
       </div>
+    </div>
+
+    <div class="security__container">
+      <div class="security__sub-container security__text">
+        <h1>Bespoke Software Development</h1>
+        <a
+          >Bring your ideas to life with our full-stack software development
+          services. Whether you need a dynamic website, a powerful mobile app,
+          or a custom solution, our team delivers high-quality, scalable
+          projects tailored to your needs. From front-end design to back-end
+          infrastructure, we handle it all—transforming your vision into reality
+          with innovative technology and a seamless user experience.
+        </a>
+        <ul>
+          <li>- Full-stack development services</li>
+          <li>- Websites, apps & custom solutions</li>
+          <li>- High-quality, scalable projects</li>
+          <li>- Front-end to back-end expertise</li>
+          <li>- Innovative tech solutions</li>
+          <li>- Seamless user experience</li>
+        </ul>
+      </div>
       <div class="security__sub-container">
         <div class="security">
           <div class="security__inner"></div>
           <div class="circle2"></div>
           <div class="circle2"></div>
+          <img src="images/puzzle.png" />
         </div>
       </div>
     </div>
@@ -246,6 +258,7 @@
           <div class="website__inner"></div>
           <div class="circle3"></div>
           <div class="circle3"></div>
+          <img src="images/shield.png" />
         </div>
       </div>
       <div class="website__sub-container website__text">
@@ -362,7 +375,6 @@
     <footer id="footer">
       <div class="col col1">
         <h3>Aethero</h3>
-        <p>AAAAAA</p>
         <div class="social">
           <a href="" target="_blank" class="link"
             ><img id="img" src="" alt=""
@@ -374,19 +386,19 @@
             ><img id="img" src="" alt=""
           /></a>
         </div>
-        <p style="color: #818181; font-size: smaller">
+        <p style="color: #818181; font-size: smaller; margin-top: 10px">
           2024 © All Rights Reserved
         </p>
       </div>
       <div class="col col2">
-        <p>Aethero</p>
-        <p>Privacy Policy</p>
-        <p>Terms of service</p>
+        <a href="#">Aethero</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of service</a>
       </div>
       <div class="col col3">
-        <p>Services</p>
-        <p>Our team</p>
-        <p>Contact</p>
+        <a href="#">Services</a>
+        <a href="#">Our team</a>
+        <a href="#">Contact Us</a>
       </div>
     </footer>
 

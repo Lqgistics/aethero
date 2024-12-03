@@ -107,58 +107,14 @@ function addAnimation() {
 }
 
 document.getElementById("cta").addEventListener("click", function () {
-  const targetElement = document.getElementById("scroll");
-  let offset = -300; // Adjust the offset value to scroll slightly higher
-
-  // Check if it's a mobile device
-  if (window.innerWidth < 768) {
-    offset = -400; // Set a different offset value for mobile devices
-  } else if (window.innerWidth >= 768 && window.innerWidth <= 1024) {
-    offset = -700;
-  }
+  const targetElement = document.querySelector("#card__right");
 
   const targetPosition =
-    targetElement.getBoundingClientRect().top + window.pageYOffset + offset;
+    targetElement.getBoundingClientRect().top + window.scrollY;
   window.scrollTo({
     top: targetPosition,
     behavior: "smooth",
   });
-});
-
-const navbarButton = document.querySelector("#navbar__btn");
-const form = document.querySelector("#form");
-const backgroundElements = document.querySelectorAll(
-  ".main__content, .card-blur, .info-section, .main__container"
-);
-
-navbarButton.addEventListener("click", function (event) {
-  if (form.style.display === "flex") {
-    form.style.display = "none";
-    backgroundElements.forEach((element) => {
-      element.style.filter = "none";
-    });
-    //document.body.style.overflowY = 'auto'; // Enable vertical scrolling
-  } else {
-    form.style.display = "flex";
-    backgroundElements.forEach((element) => {
-      element.style.filter = "blur(50px)";
-    });
-    //document.body.style.overflowY = 'hidden'; // Disable vertical scrolling
-  }
-});
-
-document.addEventListener("click", function (event) {
-  const isFormClicked = form.contains(event.target);
-  const isNavbarButtonClicked = event.target === navbarButton;
-
-  if (!isFormClicked && !isNavbarButtonClicked) {
-    form.style.display = "none";
-    //document.body.style.overflowY = 'scroll'; // Enable vertical scrolling
-
-    backgroundElements.forEach((element) => {
-      element.style.filter = "none";
-    });
-  }
 });
 
 const stats = document.querySelectorAll(".stats__card h1");
@@ -192,3 +148,30 @@ const statsObserver = new IntersectionObserver((entries) => {
 });
 
 stats.forEach((stat) => statsObserver.observe(stat));
+
+// JavaScript
+function openForm() {
+  document.querySelector(".form-popup-bg").classList.add("is-visible");
+}
+
+function closeForm() {
+  document.querySelector(".form-popup-bg").classList.remove("is-visible");
+}
+
+// Close if clicked outside form
+document
+  .querySelector(".form-popup-bg")
+  .addEventListener("click", function (event) {
+    if (event.target === this) {
+      closeForm();
+    }
+  });
+
+// Open form trigger
+document
+  .querySelector("#navbar__btn")
+  .querySelector("#contact__footer")
+  .addEventListener("click", function (event) {
+    event.preventDefault();
+    openForm();
+  });
