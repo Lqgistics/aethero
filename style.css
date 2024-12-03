@@ -842,7 +842,9 @@ body {
   width: 25%;
   top: 50%;
   left: 50%;
+  -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
+  -webkit-opacity: 0.8;
   opacity: 0.8;
 }
 
@@ -984,7 +986,9 @@ body {
   width: 35%;
   top: 50%;
   left: 50%;
+  -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
+  -webkit-opacity: 0.8;
   opacity: 0.8;
 }
 
@@ -1090,7 +1094,9 @@ body {
   width: 35%;
   top: 50%;
   left: 50%;
+  -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
+  -webkit-opacity: 0.8;
   opacity: 0.8;
 }
 
