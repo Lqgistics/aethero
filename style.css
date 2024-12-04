@@ -1422,7 +1422,7 @@ body {
     position: absolute;
     width: 12%;
     top: 20%;
-    left: 20%;
+    left: 21%;
   }
   .stack {
     height: 150vh;
@@ -1992,7 +1992,7 @@ body {
   #card__left img {
     position: absolute;
     inset: 0;
-    left: 20%;
+    left: 22%;
     top: 20%;
     width: 11%;
   }
@@ -2247,13 +2247,15 @@ footer {
   position: relative;
 }
 
-footer p {
-  padding: 5px;
-  font-size: 1.1rem;
+footer a {
+  padding: 1px;
+  font-size: 0.9rem;
+  display: block;
 }
 
 footer h3 {
   font-size: 1.8rem;
+  display: block;
 }
 
 .col {
