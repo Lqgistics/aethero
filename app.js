@@ -170,7 +170,6 @@ document
 // Open form trigger
 document
   .querySelector("#navbar__btn")
-  .querySelector("#contact__footer")
   .addEventListener("click", function (event) {
     event.preventDefault();
     openForm();
