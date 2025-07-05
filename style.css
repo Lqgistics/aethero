@@ -20,6 +20,8 @@ html {
 body {
   background-color: #0a001b;
   width: 100%;
+
+  
 }
 
 @keyframes move-up6 {
@@ -332,10 +334,13 @@ body {
   gap: 10px;
   width: 90%;
   max-width: 700px;
-  background-color: #0c0c0c;
   padding: 50px;
-  border-radius: 10px;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  border-radius: 20px;
   transform: scale(0.8);
   transition: transform 0.3s ease;
 }
@@ -378,7 +383,7 @@ body {
   padding: 8px 14px;
   width: 100%;
   height: 60px;
-  background-color: #131313;
+  background: rgba(255, 255, 255, 0.05);
   color: #fff;
 }
 
@@ -678,6 +683,7 @@ body {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
   backdrop-filter: blur(10px);
   border-radius: 20px;
+  
 }
 
 .stack {
@@ -686,8 +692,9 @@ body {
   justify-content: center;
   align-items: center;
   width: 100vw; /* Full viewport width */
-  height: 250vh; /* Full viewport height */
+  height: 350vh; /* Full viewport height */
   position: relative; /* Make .stack a positioning context */
+  
 }
 
 .stack__card {
@@ -696,6 +703,7 @@ body {
   justify-content: center;
   width: 50vw;
   height: 100vh;
+  position: -webkit-sticky;
   position: sticky;
   top: 5%;
   font-size: 10rem;
@@ -710,6 +718,7 @@ body {
   -webkit-transform: translate3d(0, 0, 0);
   -moz-transform: translate3d(0, 0, 0);
   z-index: 1;
+  
 }
 
 .stack__card:nth-child(2) {
@@ -817,6 +826,7 @@ body {
   scroll-snap-align: start;
   grid-template-columns: 1fr 1fr; /* Change this line to create a single column */
   overflow: hidden;
+  
 }
 
 .discord__sub-container {
@@ -1909,17 +1919,22 @@ body {
 
   .companies__container {
     height: 220px;
+    
   }
 
   .scroller {
     width: 100%;
     height: 250px;
-    top: 10%;
+    top: -10%;
+
   }
 
   .scroller img {
-    width: 100%;
-    height: 150px;
+    width: auto;
+    max-width: 100%;
+    height: 200px;
+    object-fit: contain;
+    -webkit-transform: translateZ(0);
   }
 
   .scroller__inner {
@@ -2005,6 +2020,8 @@ body {
 
   .stack__card {
     width: 70%;
+    height: 50vh;
+
   }
 
   .stack__card p {
