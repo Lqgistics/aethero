@@ -8,6 +8,9 @@
       content="width=device-width, initial-scale = 0.86, maximum-scale=3.0, minimum-scale=0.86"
     />
     <link rel="stylesheet" href="style.css" />
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
   </head>
 
   <body>
@@ -29,21 +32,23 @@
           type="button"
           class="close-button"
           onclick="closeForm()"
-          style="color: rgba(255, 0, 0, 0.575); font-size: 1.2rem"
+          style="color: rgba(255, 0, 0, 0.575); font-size: 1.2rem; background-color: rgba(255, 0, 0, 0);"
         >
           x
         </button>
         <div class="title">Contact us</div>
-        <input type="text" placeholder="Your email" class="input" />
-        <textarea placeholder="Your message"></textarea>
+        <input type="text" name="from_name" placeholder="Your name" class="input" required />
+        <input type="email" name="from_email" placeholder="Your email" class="input" required />
+        <textarea name="message" placeholder="Your message" required></textarea>
 
-        <button>Submit</button>
+        <button type="submit">Submit</button>
       </form>
     </div>
 
     <div class="main__content">
-      <p>GITHUB TEST</p>
-      <button id="cta" class="button1">
+      <div class="hero-content">
+        <h1 class="hero-title">Innovative Development Solutions for Modern Businesses</h1>
+        <button id="cta" class="button1">
         <svg
           class="svg-icon"
           height="24"
@@ -59,35 +64,44 @@
         </svg>
         <span>Explore</span>
       </button>
+      </div>
     </div>
 
     <!-- Main text -->
 
     <div class="main__container">
       <div class="extras__card" id="card__left">
-        <img src="images/discord-mark-white.png" />
-        <h2 class="blur">Discord Bot Development</h2>
+        <svg xmlns="http://www.w3.org/2000/svg" class="" fill="none" viewBox="0 0 24 24"
+          stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+        </svg>
+        <h2 class="blur">Web Development</h2>
         <p class="blur">
-          Empower your community with custom Discord bots. Enhance engagement,
-          automate tasks, and create unique experiences.
+          Custom web applications built with ASP.NET Core, Vue.js, and cloud-native architectures.
         </p>
       </div>
-
+    
       <div class="extras__card" id="card">
-        <img src="images/puzzle.png" />
-        <h2 class="blur">Bespoke Solutions</h2>
+        <svg xmlns="http://www.w3.org/2000/svg" class="" fill="none" viewBox="0 0 24 24"
+          stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round"
+            d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" />
+        </svg>
+        <h2 class="blur">Cloud Infrastructure</h2>
         <p class="blur">
-          Crafting personalized web and software solutions. Tailored, innovative
-          creations to meet your digital aspirations.
+          AWS cloud solutions with S3, Lambda, ECS, and Terraform for automated deployment.
         </p>
       </div>
-
+    
       <div class="extras__card" id="card__right">
-        <img src="images/shield.png" />
-        <h2 class="blur">Security</h2>
+        <svg xmlns="http://www.w3.org/2000/svg" class="" fill="none" viewBox="0 0 24 24"
+          stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round"
+            d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M12 6V3m0 18v-3M5.636 5.636L4.222 4.222m15.556 15.556l-1.414-1.414M4.222 19.778l1.414-1.414M19.778 4.222l-1.414 1.414" />
+        </svg>
+        <h2 class="blur">AI & ML Solutions</h2>
         <p class="blur">
-          Ensure the safety of your digital presence. Our thorough security
-          audits protect your Discord community with robust measures.
+          AI-powered solutions including speech-to-text, translation, and machine learning.
         </p>
       </div>
     </div>
@@ -132,155 +146,173 @@
 
     <div class="stack">
       <div class="stack__card">
-        <p>
-          Aethero have been great for making NeoTokyo a bot + extending
-          features, post creation. Along with being well versed with Discord.js,
-          they're fast and great at thinking of solutions before the problems
-          happen.
-        </p>
-        <h1>Litruv</h1>
-        <h2>from NeoTokyo, EllioTrades and Imposters</h2>
+      <p>
+        Aethero have been great for developing custom solutions and extending
+        features for our platform. Along with being well versed in modern technologies,
+        they're fast and great at thinking of solutions before the problems
+        happen.
+      </p>
+      <h1>Litruv</h1>
+      <h2>from NeoTokyo, EllioTrades and Imposters</h2>
       </div>
       <div class="stack__card">
-        <p>
-          Aethero are an exceptionally courteous and diligent provider, always
-          giving more beyond what is requested. They've got great insight into
-          what works on Discord, and have the ability to quantify important
-          points so managers can make effective decisions based on KPIs. Pretty
-          much my go-to with anything Discord and social media work-related.
-        </p>
-        <h1>Mikio Crosby</h1>
-        <h2>CYAN</h2>
+      <p>
+        Aethero are an exceptionally courteous and diligent provider, always
+        giving more beyond what is requested. They've got great insight into
+        what works, and have the ability to quantify important
+        points so managers can make effective decisions based on KPIs. Pretty
+        much my go-to with anything development and social media work-related.
+      </p>
+      <h1>Mikio Crosby</h1>
+      <h2>CYAN</h2>
       </div>
       <div class="stack__card">
-        <p>
-          Working with Aethero has been a pleasure. They've created a couple of
-          Discord bots for me now, which have all been incredible time savers. A
-          large plus working with them is that it's a very low stress
-          environment. They gets things done on time, and we can learn and have
-          fun in the process. I am not a dev. They are very patient with me when
-          I explain what I need done, and finds a way to implement it without
-          unnecessary complexity to keep the timeline and budget where it needs
-          to be. Would recommend, I know we have more projects lined up for them
-          in the future.
-        </p>
-        <h1>SunnyP</h1>
-        <h2>Mavia</h2>
+      <p>
+        Working with Aethero has been a pleasure. They've created several
+        custom applications for me now, which have all been incredible time savers. A
+        large plus working with them is that it's a very low stress
+        environment. They get things done on time, and we can learn and have
+        fun in the process. I am not a dev. They are very patient with me when
+        I explain what I need done, and find a way to implement it without
+        unnecessary complexity to keep the timeline and budget where it needs
+        to be. Would recommend, I know we have more projects lined up for them
+        in the future.
+      </p>
+      <h1>SunnyP</h1>
+      <h2>Mavia</h2>
       </div>
       <div class="stack__card">
-        <p>
-          Aethero's audit for our Discord server was very detailed and
-          professional. They looked at every possible attack vector and gave us
-          instructions and suggestions for mitigating them. They were very
-          professional the whole way, and we've already recommended them to our
-          friends and connections to help them secure their projects. Thank you!
-        </p>
-        <h1>Metro</h1>
-        <h2>Kerberus</h2>
+      <p>
+        Aethero's security audit for our platform was very detailed and
+        professional. They looked at every possible attack vector and gave us
+        instructions and suggestions for mitigating them. They were very
+        professional the whole way, and we've already recommended them to our
+        friends and connections to help them secure their projects. Thank you!
+      </p>
+      <h1>Metro</h1>
+      <h2>Kerberus</h2>
       </div>
       <div class="stack__card">
-        <p>
-          Aethero have been assisting me with all sorts of Discord issues for
-          our clients and has not failed to impress one time. Every time we need
-          something sorted, they have come through and made us look good! As far
-          as I know, there is no discord issue that they can’t figure out and
-          could not recommend more.
-        </p>
-        <h1>Louis</h1>
-        <h2>Mooning</h2>
+      <p>
+        Aethero have been assisting me with all sorts of development issues for
+        our clients and has not failed to impress one time. Every time we need
+        something sorted, they have come through and made us look good! As far
+        as I know, there is no issue that they can't figure out and
+        could not recommend more.
+      </p>
+      <h1>Louis</h1>
+      <h2>Mooning</h2>
       </div>
     </div>
 
-    <div class="discord__container">
-      <div class="discord__sub-container">
-        <div class="discord">
-          <div class="circle"></div>
-          <div class="circle"></div>
-          <img src="images/discord-mark-white.png" />
+    <div class="services-section">
+        <div class="services-container">
+            <div class="services-grid">
 
-          <div class="discord__inner"></div>
-        </div>
-      </div>
-      <div class="discord__sub-container discord__text">
-        <h1>Discord Solutions</h1>
-        <a
-          >Unlock the full potential of your Discord community with our tailored
-          solutions. We craft custom bots that automate tasks, boost engagement,
-          and create unique experiences for your members. From setting up and
-          optimising Discord servers to building interactive features, we help
-          you foster vibrant communities that stand out. Let us handle the tech,
-          so you can focus on what matters most—growing your community.
-        </a>
-        <ul>
-          <li>- Custom bot development</li>
-          <li>- Server setup & optimization</li>
-          <li>- Task automation</li>
-          <li>- User engagement features</li>
-          <li>- Interactive functionality</li>
-          <li>- Community growth solutions</li>
-        </ul>
-      </div>
-    </div>
+                <div class="service-card">
+                    <div class="icon-container">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                        </svg>
+                    </div>
+                    <div class="content">
+                        <h3>Web Development</h3>
+                        <p>Custom web applications built with ASP.NET Core, Vue.js, and cloud-native architectures.</p>
+                        <button class="read-more-btn">READ MORE &rarr;</button>
+                    </div>
+                    <div class="detailed-overview">
+                        <h4>In-Depth: Web Development</h4>
+                        <p>We build robust, scalable, and secure web applications tailored to your business needs. Our expertise in ASP.NET Core ensures a powerful backend, while Vue.js allows us to create dynamic and responsive user interfaces. We follow cloud-native principles to guarantee high availability and performance.</p>
+                    </div>
+                </div>
 
-    <div class="security__container">
-      <div class="security__sub-container security__text">
-        <h1>Bespoke Software Development</h1>
-        <a
-          >Bring your ideas to life with our full-stack software development
-          services. Whether you need a dynamic website, a powerful mobile app,
-          or a custom solution, our team delivers high-quality, scalable
-          projects tailored to your needs. From front-end design to back-end
-          infrastructure, we handle it all—transforming your vision into reality
-          with innovative technology and a seamless user experience.
-        </a>
-        <ul>
-          <li>- Full-stack development services</li>
-          <li>- Websites, apps & custom solutions</li>
-          <li>- High-quality, scalable projects</li>
-          <li>- Front-end to back-end expertise</li>
-          <li>- Innovative tech solutions</li>
-          <li>- Seamless user experience</li>
-        </ul>
-      </div>
-      <div class="security__sub-container">
-        <div class="security">
-          <div class="security__inner"></div>
-          <div class="circle2"></div>
-          <div class="circle2"></div>
-          <img src="images/puzzle.png" />
-        </div>
-      </div>
-    </div>
+                <div class="service-card">
+                    <div class="icon-container microservices-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+                        </svg>
+                    </div>
+                    <div class="content">
+                        <h3>Microservices Architecture</h3>
+                        <p>Scalable microservices using Golang, Node.js, and AWS ECS with containerized deployment.</p>
+                        <button class="read-more-btn microservices-btn">READ MORE &rarr;</button>
+                    </div>
+                    <div class="detailed-overview">
+                        <h4>In-Depth: Microservices</h4>
+                        <p>Break down monolithic applications into smaller, independently deployable services. Using technologies like Golang for performance and Node.js for flexibility, we design resilient microservice ecosystems. We leverage AWS ECS and Docker for seamless container orchestration and scalability.</p>
+                    </div>
+                </div>
 
-    <div class="website__container">
-      <div class="website__sub-container">
-        <div class="website">
-          <div class="website__inner"></div>
-          <div class="circle3"></div>
-          <div class="circle3"></div>
-          <img src="images/shield.png" />
+                <div class="service-card">
+                    <div class="icon-container cloud-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" />
+                        </svg>
+                    </div>
+                    <div class="content">
+                        <h3>Cloud Infrastructure</h3>
+                        <p>AWS cloud solutions with S3, Lambda, ECS, and Terraform for automated deployment.</p>
+                        <button class="read-more-btn cloud-btn">READ MORE &rarr;</button>
+                    </div>
+                    <div class="detailed-overview">
+                        <h4>In-Depth: Cloud Infrastructure</h4>
+                        <p>We design and manage secure, cost-effective cloud infrastructure on AWS. From object storage with S3 to serverless computing with Lambda and container management with ECS, we cover all bases. We use Terraform for Infrastructure as Code (IaC) to ensure consistent, repeatable, and automated environments.</p>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="icon-container devops-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+                        </svg>
+                    </div>
+                    <div class="content">
+                        <h3>DevOps & CI/CD</h3>
+                        <p>Automated deployment pipelines using GitHub Actions, Concourse CI, and Docker.</p>
+                        <button class="read-more-btn devops-btn">READ MORE &rarr;</button>
+                    </div>
+                    <div class="detailed-overview">
+                         <h4>In-Depth: DevOps & CI/CD</h4>
+                        <p>Streamline your development lifecycle with our DevOps expertise. We build robust CI/CD pipelines using tools like GitHub Actions and Concourse CI to automate testing and deployment. By containerizing applications with Docker, we ensure consistency from development to production, reducing errors and accelerating release cycles.</p>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="icon-container api-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                             <path stroke-linecap="round" stroke-linejoin="round" d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H5v-2H3v-2H1v-4a6 6 0 017.743-5.743z" />
+                        </svg>
+                    </div>
+                    <div class="content">
+                        <h3>API Development</h3>
+                        <p>RESTful APIs using ASP.NET Core, Go Fiber, and Node.js with comprehensive testing.</p>
+                        <button class="read-more-btn api-btn">READ MORE &rarr;</button>
+                    </div>
+                     <div class="detailed-overview">
+                         <h4>In-Depth: API Development</h4>
+                        <p>We create fast, secure, and well-documented RESTful APIs to power your applications. Whether using the enterprise-grade features of ASP.NET Core, the raw performance of Go with Fiber, or the versatility of Node.js, we deliver APIs that are both powerful and easy to consume. Rigorous testing ensures reliability and correctness.</p>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="icon-container ai-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M12 6V3m0 18v-3M5.636 5.636L4.222 4.222m15.556 15.556l-1.414-1.414M4.222 19.778l1.414-1.414M19.778 4.222l-1.414 1.414" />
+                        </svg>
+                    </div>
+                    <div class="content">
+                        <h3>AI & ML Solutions</h3>
+                        <p>AI-powered solutions including speech-to-text, translation, and machine learning.</p>
+                        <button class="read-more-btn ai-btn">READ MORE &rarr;</button>
+                    </div>
+                     <div class="detailed-overview">
+                         <h4>In-Depth: AI & ML Solutions</h4>
+                        <p>Leverage the power of Artificial Intelligence and Machine Learning to unlock new capabilities. We develop custom solutions for speech-to-text transcription, automated translation, predictive analytics, and more. Our models are trained on your data to provide insights and automation specific to your business challenges.</p>
+                    </div>
+                </div>
+
+            </div>
         </div>
-      </div>
-      <div class="website__sub-container website__text">
-        <h1>Discord Security</h1>
-        <a
-          >Protect your community with our comprehensive Discord security
-          services. We conduct in-depth security audits covering over 100
-          critical checkpoints, ensuring your server is fortified against the
-          latest threats. From safeguarding member data to preventing malicious
-          attacks, we provide expert advice and implement strategies to keep
-          your server secure, your members protected, and your peace of mind
-          intact.
-        </a>
-        <ul>
-          <li>- Comprehensive security audits</li>
-          <li>- 100+ security checkpoints</li>
-          <li>- Protection against latest threats</li>
-          <li>- Member data safeguarding</li>
-          <li>- Malicious attack prevention</li>
-          <li>- Expert security consultation</li>
-        </ul>
-      </div>
     </div>
 
     <!--
@@ -373,32 +405,11 @@
         -->
 
     <footer id="footer">
-      <div class="col col1">
-        <h3>Aethero</h3>
-        <div class="social">
-          <a href="" target="_blank" class="link"
-            ><img id="img" src="" alt=""
-          /></a>
-          <a href="" target="_blank" class="link"
-            ><img id="img" src="" alt=""
-          /></a>
-          <a href="" target="_blank" class="link"
-            ><img id="img" src="" alt=""
-          /></a>
-        </div>
-        <p style="color: #818181; font-size: smaller; margin-top: 10px">
-          2024 © All Rights Reserved
-        </p>
-      </div>
-      <div class="col col2">
-        <a href="#">Aethero</a>
-        <a href="#">Privacy Policy</a>
-        <a href="#">Terms of service</a>
-      </div>
-      <div class="col col3">
-        <a href="#">Services</a>
-        <a href="#">Our team</a>
-        <a href="#">Contact Us</a>
+      <div class="footer-content">
+        <h3>Aethero Limited</h3>
+        <p>info@aethero.io</p>
+        <p>14/2e Docklands Business Centre 10-16 Tiller Road, London, England, E14 8PX</p>
+        <p>© 2024 Aethero Limited. All Rights Reserved.</p>
       </div>
     </footer>
 

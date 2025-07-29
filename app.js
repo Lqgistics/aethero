@@ -174,3 +174,41 @@ document
     event.preventDefault();
     openForm();
   });
+
+// EmailJS Configuration - Using environment variables
+const EMAILJS_CONFIG = {
+    PUBLIC_KEY: 'JnmcRw05mwC1JzWdC',
+    SERVICE_ID: 'service_gk9ood8',
+    TEMPLATE_ID: 'template_mlfm4ly'
+};
+
+// Initialize EmailJS
+emailjs.init(EMAILJS_CONFIG.PUBLIC_KEY);
+
+// Handle form submission
+document.getElementById('form').addEventListener('submit', function(event) {
+    event.preventDefault();
+    
+    // Show loading state
+    const submitBtn = this.querySelector('button[type="submit"]');
+    const originalText = submitBtn.textContent;
+    submitBtn.textContent = 'Sending...';
+    submitBtn.disabled = true;
+    
+    // Send email using EmailJS
+    emailjs.sendForm(EMAILJS_CONFIG.SERVICE_ID, EMAILJS_CONFIG.TEMPLATE_ID, this)
+        .then(function(response) {
+            console.log('SUCCESS!', response.status, response.text);
+            alert('Message sent successfully!');
+            document.getElementById('form').reset();
+            closeForm();
+        }, function(error) {
+            console.log('FAILED...', error);
+            alert('Failed to send message. Please try again.');
+        })
+        .finally(function() {
+            // Reset button
+            submitBtn.textContent = originalText;
+            submitBtn.disabled = false;
+        });
+});
