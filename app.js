@@ -149,6 +149,18 @@ const statsObserver = new IntersectionObserver((entries) => {
 
 stats.forEach((stat) => statsObserver.observe(stat));
 
+// Navigation scroll functions
+function scrollToSection(sectionId) {
+  const targetElement = document.getElementById(sectionId) || document.querySelector(`#${sectionId}`);
+  if (targetElement) {
+    const targetPosition = targetElement.getBoundingClientRect().top + window.scrollY;
+    window.scrollTo({
+      top: targetPosition,
+      behavior: "smooth",
+    });
+  }
+}
+
 // JavaScript
 function openForm() {
   document.querySelector(".form__popup__bg").classList.add("is-visible");
