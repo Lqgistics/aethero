@@ -151,16 +151,16 @@ stats.forEach((stat) => statsObserver.observe(stat));
 
 // JavaScript
 function openForm() {
-  document.querySelector(".form-popup-bg").classList.add("is-visible");
+  document.querySelector(".form__popup__bg").classList.add("is-visible");
 }
 
 function closeForm() {
-  document.querySelector(".form-popup-bg").classList.remove("is-visible");
+  document.querySelector(".form__popup__bg").classList.remove("is-visible");
 }
 
 // Close if clicked outside form
 document
-  .querySelector(".form-popup-bg")
+  .querySelector(".form__popup__bg")
   .addEventListener("click", function (event) {
     if (event.target === this) {
       closeForm();

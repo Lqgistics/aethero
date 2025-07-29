@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<ht</footer>ml lang="en">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equi</div>v="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta
       name="viewport"
-      content="width=device-width, initial-scale = 0.86, maximum-scale=3.0, minimum-scale=0.86"
+      content="width=device-width, initial-scale=0.86, maximum-scale=3.0, minimum-scale=0.86"
     />
     <link rel="stylesheet" href="style.css" />
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
@@ -26,19 +26,19 @@
         <button class="button" id="navbar__btn">Contact Us</button>
       </div>
     </nav>
-    <div class="form-popup-bg">
+    <div class="form__popup__bg">
       <form id="form">
         <button
           type="button"
-          class="close-button"
+          class="form__close__button"
           onclick="closeForm()"
           style="color: rgba(255, 0, 0, 0.575); font-size: 1.2rem; background-color: rgba(255, 0, 0, 0);"
         >
           x
         </button>
-        <div class="title">Contact us</div>
-        <input type="text" name="from_name" placeholder="Your name" class="input" required />
-        <input type="email" name="from_email" placeholder="Your email" class="input" required />
+        <div class="form__title">Contact us</div>
+        <input type="text" name="from_name" placeholder="Your name" class="form__input" required />
+        <input type="email" name="from_email" placeholder="Your email" class="form__input" required />
         <textarea name="message" placeholder="Your message" required></textarea>
 
         <button type="submit">Submit</button>
@@ -46,11 +46,11 @@
     </div>
 
     <div class="main__content">
-      <div class="hero-content">
-        <h1 class="hero-title">Innovative Development Solutions for Businesses</h1>
-        <button id="cta" class="button1">
+      <div class="hero__content">
+        <h1 class="hero__title">Innovative Development Solutions for Businesses</h1>
+        <button id="cta" class="hero__button">
         <svg
-          class="svg-icon"
+          class="hero__button__icon"
           height="24"
           width="24"
           viewBox="0 0 24 24"
@@ -71,7 +71,7 @@
 
     <div class="main__container">
       <div class="extras__card" id="card__left">
-        <svg xmlns="http://www.w3.org/2000/svg" class="" fill="none" viewBox="0 0 24 24"
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
           stroke="currentColor" stroke-width="2">
           <path stroke-linecap="round" stroke-linejoin="round" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
         </svg>
@@ -82,7 +82,7 @@
       </div>
     
       <div class="extras__card" id="card">
-        <svg xmlns="http://www.w3.org/2000/svg" class="" fill="none" viewBox="0 0 24 24"
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
           stroke="currentColor" stroke-width="2">
           <path stroke-linecap="round" stroke-linejoin="round"
             d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" />
@@ -94,7 +94,7 @@
       </div>
     
       <div class="extras__card" id="card__right">
-        <svg xmlns="http://www.w3.org/2000/svg" class="" fill="none" viewBox="0 0 24 24"
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
           stroke="currentColor" stroke-width="2">
           <path stroke-linecap="round" stroke-linejoin="round"
             d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M12 6V3m0 18v-3M5.636 5.636L4.222 4.222m15.556 15.556l-1.414-1.414M4.222 19.778l1.414-1.414M19.778 4.222l-1.414 1.414" />
@@ -126,21 +126,58 @@
       </div>
     </div>
 
-    <div class="info__container" id="stats">
+    <div class="stats-grid" id="stats">
       <div id="cyan"></div>
       <div id="purple"></div>
 
+      <!-- Card 1: Projects Launched -->
       <div class="stats__card">
-        <h1>98</h1>
-        <a>projects launched </a>
+        <div class="card-header">
+          <p class="card-title">Projects Launched</p>
+          <div class="icon-wrapper">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="8" r="7"></circle>
+              <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
+            </svg>
+          </div>
+        </div>
+        <div class="card-body">
+          <h1 class="stat-number">98</h1>
+        </div>
       </div>
+
+      <!-- Card 2: Years of Experience -->
       <div class="stats__card">
-        <h1>25</h1>
-        <a>years of experience</a>
+        <div class="card-header">
+          <p class="card-title">Years of Experience</p>
+          <div class="icon-wrapper">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+              <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+            </svg>
+          </div>
+        </div>
+        <div class="card-body">
+          <h1 class="stat-number">25</h1>
+        </div>
       </div>
+
+      <!-- Card 3: Skilled Experts -->
       <div class="stats__card">
-        <h1>50+</h1>
-        <a>skilled experts </a>
+        <div class="card-header">
+          <p class="card-title">Skilled Experts</p>
+          <div class="icon-wrapper">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+              <circle cx="9" cy="7" r="4"></circle>
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+              <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+            </svg>
+          </div>
+        </div>
+        <div class="card-body">
+          <h1 class="stat-number">50+</h1>
+        </div>
       </div>
     </div>
 
@@ -167,7 +204,7 @@
       <h2>CYAN</h2>
       </div>
       <div class="stack__card">
-      <p>
+      <p id="large__review">
         Working with Aethero has been a pleasure. They've created several
         custom applications for me now, which have all been incredible time savers. A
         large plus working with them is that it's a very low stress
@@ -205,12 +242,12 @@
       </div>
     </div>
 
-    <div class="services-section">
-        <div class="services-container">
-            <div class="services-grid">
+    <div class="services__section">
+        <div class="services__container">
+            <div class="services__grid">
 
-                <div class="service-card">
-                    <div class="icon-container">
+                <div class="service__card">
+                    <div class="icon__container">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
                         </svg>
@@ -218,16 +255,16 @@
                     <div class="content">
                         <h3>Web Development</h3>
                         <p>Custom web applications built with ASP.NET Core, Vue.js, and cloud-native architectures.</p>
-                        <button class="read-more-btn">READ MORE &rarr;</button>
+                        <button class="read__more__btn">READ MORE &rarr;</button>
                     </div>
-                    <div class="detailed-overview">
+                    <div class="detailed__overview">
                         <h4>In-Depth: Web Development</h4>
                         <p>We build robust, scalable, and secure web applications tailored to your business needs. Our expertise in ASP.NET Core ensures a powerful backend, while Vue.js allows us to create dynamic and responsive user interfaces. We follow cloud-native principles to guarantee high availability and performance.</p>
                     </div>
                 </div>
 
-                <div class="service-card">
-                    <div class="icon-container microservices-icon">
+                <div class="service__card">
+                    <div class="icon__container microservices__icon">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
                         </svg>
@@ -235,16 +272,16 @@
                     <div class="content">
                         <h3>Microservices Architecture</h3>
                         <p>Scalable microservices using Golang, Node.js, and AWS ECS with containerized deployment.</p>
-                        <button class="read-more-btn microservices-btn">READ MORE &rarr;</button>
+                        <button class="read__more__btn microservices__btn">READ MORE &rarr;</button>
                     </div>
-                    <div class="detailed-overview">
+                    <div class="detailed__overview">
                         <h4>In-Depth: Microservices</h4>
                         <p>Break down monolithic applications into smaller, independently deployable services. Using technologies like Golang for performance and Node.js for flexibility, we design resilient microservice ecosystems. We leverage AWS ECS and Docker for seamless container orchestration and scalability.</p>
                     </div>
                 </div>
 
-                <div class="service-card">
-                    <div class="icon-container cloud-icon">
+                <div class="service__card">
+                    <div class="icon__container cloud__icon">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" />
                         </svg>
@@ -252,16 +289,16 @@
                     <div class="content">
                         <h3>Cloud Infrastructure</h3>
                         <p>AWS cloud solutions with S3, Lambda, ECS, and Terraform for automated deployment.</p>
-                        <button class="read-more-btn cloud-btn">READ MORE &rarr;</button>
+                        <button class="read__more__btn cloud__btn">READ MORE &rarr;</button>
                     </div>
-                    <div class="detailed-overview">
+                    <div class="detailed__overview">
                         <h4>In-Depth: Cloud Infrastructure</h4>
                         <p>We design and manage secure, cost-effective cloud infrastructure on AWS. From object storage with S3 to serverless computing with Lambda and container management with ECS, we cover all bases. We use Terraform for Infrastructure as Code (IaC) to ensure consistent, repeatable, and automated environments.</p>
                     </div>
                 </div>
 
-                <div class="service-card">
-                    <div class="icon-container devops-icon">
+                <div class="service__card">
+                    <div class="icon__container devops__icon">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
                         </svg>
@@ -269,16 +306,16 @@
                     <div class="content">
                         <h3>DevOps & CI/CD</h3>
                         <p>Automated deployment pipelines using GitHub Actions, Concourse CI, and Docker.</p>
-                        <button class="read-more-btn devops-btn">READ MORE &rarr;</button>
+                        <button class="read__more__btn devops__btn">READ MORE &rarr;</button>
                     </div>
-                    <div class="detailed-overview">
+                    <div class="detailed__overview">
                          <h4>In-Depth: DevOps & CI/CD</h4>
                         <p>Streamline your development lifecycle with our DevOps expertise. We build robust CI/CD pipelines using tools like GitHub Actions and Concourse CI to automate testing and deployment. By containerizing applications with Docker, we ensure consistency from development to production, reducing errors and accelerating release cycles.</p>
                     </div>
                 </div>
 
-                <div class="service-card">
-                    <div class="icon-container api-icon">
+                <div class="service__card">
+                    <div class="icon__container api__icon">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                              <path stroke-linecap="round" stroke-linejoin="round" d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H5v-2H3v-2H1v-4a6 6 0 017.743-5.743z" />
                         </svg>
@@ -286,16 +323,16 @@
                     <div class="content">
                         <h3>API Development</h3>
                         <p>RESTful APIs using ASP.NET Core, Go Fiber, and Node.js with comprehensive testing.</p>
-                        <button class="read-more-btn api-btn">READ MORE &rarr;</button>
+                        <button class="read__more__btn api__btn">READ MORE &rarr;</button>
                     </div>
-                     <div class="detailed-overview">
+                     <div class="detailed__overview">
                          <h4>In-Depth: API Development</h4>
                         <p>We create fast, secure, and well-documented RESTful APIs to power your applications. Whether using the enterprise-grade features of ASP.NET Core, the raw performance of Go with Fiber, or the versatility of Node.js, we deliver APIs that are both powerful and easy to consume. Rigorous testing ensures reliability and correctness.</p>
                     </div>
                 </div>
 
-                <div class="service-card">
-                    <div class="icon-container ai-icon">
+                <div class="service__card">
+                    <div class="icon__container ai__icon">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M12 6V3m0 18v-3M5.636 5.636L4.222 4.222m15.556 15.556l-1.414-1.414M4.222 19.778l1.414-1.414M19.778 4.222l-1.414 1.414" />
                         </svg>
@@ -303,9 +340,9 @@
                     <div class="content">
                         <h3>AI & ML Solutions</h3>
                         <p>AI-powered solutions including speech-to-text, translation, and machine learning.</p>
-                        <button class="read-more-btn ai-btn">READ MORE &rarr;</button>
+                        <button class="read__more__btn ai__btn">READ MORE &rarr;</button>
                     </div>
-                     <div class="detailed-overview">
+                     <div class="detailed__overview">
                          <h4>In-Depth: AI & ML Solutions</h4>
                         <p>Leverage the power of Artificial Intelligence and Machine Learning to unlock new capabilities. We develop custom solutions for speech-to-text transcription, automated translation, predictive analytics, and more. Our models are trained on your data to provide insights and automation specific to your business challenges.</p>
                     </div>
